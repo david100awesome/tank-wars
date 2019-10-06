@@ -561,6 +561,9 @@ def gameLoop():
                     damage = fireShell(gun,mainTankX,mainTankY,currentTurPos,fire_power,xlocation,barrier_width,randomHeight,enemyTankX,enemyTankY)
                     enemy_health -= damage
 
+                    if enemy_health < 1:
+                        game_win()
+
                     possibleMovement = ['f','r']
                     moveIndex = random.randrange(0,2)
 
@@ -603,6 +606,9 @@ def gameLoop():
                 if event.key == pygame.K_a or event.key == pygame.K_d:
                     power_change = 0
 
+        if mainTankX+20 > display_width or mainTankX < 0:
+            mainTankX -= 5
+
         mainTankX += tankMove
 
         currentTurPos += changeTur
@@ -613,7 +619,7 @@ def gameLoop():
             currentTurPos = 0
 
         if mainTankX - (tankWidth/2) < xlocation+barrier_width:
-            mainTankX +=5
+            mainTankX += 5
 
         gameDisplay.fill(white)
         health_bars(player_health,enemy_health)
@@ -637,9 +643,6 @@ def gameLoop():
 
         if player_health < 1:
             game_over()
-
-        elif enemy_health < 1:
-            game_win()
 
         clock.tick(FPS)
 
