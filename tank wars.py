@@ -63,6 +63,7 @@ def game_controls():
         message_to_screen("Move Turret: Up and Down arrows",black,10)
         message_to_screen("Move Tank: Left and Right arrows",black,50)
         message_to_screen("P to pause, and Q to quit",black,90)
+        message_to_screen("A to move power down, D to move power up",black,120)
         
         button("play", 150,500,100,50, green, light_green, action='play')
         button("main", 350,500,100,50, yellow, light_yellow, action='main')
