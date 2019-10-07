@@ -429,7 +429,7 @@ def game_over():
         message_to_screen("Game Over",green, -100,"large")
         message_to_screen("You died.",black,-30)
     
-        button("play again", 150,500,150,50, green, light_green, action='play')
+        button("play again", 100,500,150,50, green, light_green, action='play')
         button("controls", 350,500,100,50, yellow, light_yellow, action='controls')
         button("quit", 550,500,100,50, red, light_red, action='quit')
         
@@ -449,7 +449,7 @@ def game_win():
         message_to_screen("You won!",green, -100,"large")
         message_to_screen("Congratulations!",black,-30)
     
-        button("play again", 150,500,150,50, green, light_green, action='play')
+        button("play again", 100,500,150,50, green, light_green, action='play')
         button("controls", 350,500,100,50, yellow, light_yellow, action='controls')
         button("quit", 550,500,100,50, red, light_red, action='quit')
         
